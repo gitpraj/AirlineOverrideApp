@@ -1,0 +1,110 @@
+﻿#airline {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /*height: 100%;*/
+    /*position: absolute;*/
+    top: 37%;
+    /*transform: translate(-50%, -50%);*/
+    z-index: 2;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin-bottom: 10%
+}
+
+#airline td, #airline th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#airline tr {
+    background-color: white;
+}
+
+#airline tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#airline tr:hover {
+    background-color: #ddd;
+}
+
+#airline th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/*.airline-nested {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    overflow-x: auto;
+    overflow-y: auto
+}*/
+
+body {
+    margin: 0;
+}
+
+#clocktime {
+    margin-left: 40%;
+}
+
+.icon-bar {
+    /*width: 100%;*/
+    background-color: #555;
+    overflow: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    /*width: 80%;*/
+    /*position: absolute;*/
+    top: 30%;
+    z-index: 2;
+    /*overflow-x: auto;
+    overflow-y: auto*/
+}
+
+.icon-bar .icon-bar-name {
+    float: left;
+    /*width: 20%;*/
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.icon-bar .icon-bar-right {
+    float: right;
+    /*width: 20%;*/
+    text-align: center;
+    padding: 12px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+}
+
+.icon-bar #add-button {
+    color: red;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #4CAF50;
+}
