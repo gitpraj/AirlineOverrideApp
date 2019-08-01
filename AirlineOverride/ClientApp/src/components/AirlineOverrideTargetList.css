@@ -1,3 +1,7 @@
-﻿#airline-nested th{
+﻿.airline-nested {
+    width : 100%
+}
+
+#airline-nested-header th {
     background-color: cornflowerblue
 }

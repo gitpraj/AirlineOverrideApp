@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import './AirlineOverrideList.css';
 
 export class AddAirlineOverride extends Component {
@@ -41,18 +39,6 @@ export class AddAirlineOverride extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        //if (this.state.groupable == '') {
-        //    this.setState({
-        //        groupable: false
-        //    })
-        //}
-        //if (this.state.selfticketing == '') {
-        //    this.setState({
-        //        selfticketing: false
-        //    })
-        //}
-        console.log("code: " + JSON.stringify(this.state))
-
 
         var formData = new FormData(e.target);
         formData.append('Code', this.state.code);
@@ -77,16 +63,8 @@ export class AddAirlineOverride extends Component {
             .then((responseJson) => {
                 console.log("success: " + responseJson)
                 if (responseJson != -1) {
-                    //this.setState({
-                    //    message: "Rider added Successfully",
-                    //    firstname: "",
-                    //    lastname: "",
-                    //    phonenum: "",
-                    //    email: "",
-                    //})
                     this.successcloseModal();
                 } else {
-                    //.setState({ message: "Rider Email to be unique" })
                     this.closeModal();
                 }
             })

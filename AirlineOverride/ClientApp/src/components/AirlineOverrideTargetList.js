@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import { AirlineOverride } from './AirlineOverride';
 import { AddAirlineOverride } from './AddAirlineOverride';
 import { UpdateAirlineOverride } from './UpdateAirlineOverride';
@@ -61,7 +59,6 @@ export class AirlineOverrideTargetList extends Component {
                 if (responseJson != null) {
                     this.setState({ data: responseJson })
                 } else {
-                    //this.setState({ errors: "Credentials seem to be wrong. Please try again or first register with us" })
                 }
             })
     }
@@ -78,7 +75,7 @@ export class AirlineOverrideTargetList extends Component {
             <tr>
                 {showTable ?
                     <td colspan="11">
-                        <table id="airline-nested">
+                        <table class="airline-nested" id="airline-nested-header">
                             <tr>
                                 <th colspan="4">Sequence</th>
                                 <th colspan="4">Hard Max ROI</th>

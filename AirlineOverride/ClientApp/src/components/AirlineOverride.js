@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import './AirlineOverrideList.css';
 import { AirlineOverrideTargetList } from './AirlineOverrideTargetList';
 import { AddAirlineOverride } from './AddAirlineOverride';
@@ -23,13 +21,10 @@ export class AirlineOverride extends Component {
     handleEdit(e) {
         e.preventDefault();
         this.props.handleUpdate(this.props.info.airlineOverrideId);
-        //tdis.props.history.push("/addrider");
     }
 
     handleOverrideTarget(e) {
         e.preventDefault();
-        //this.props.handleTarget(this.props.info.airlineOverrideId);
-        //tdis.props.history.push("/riders");
         const { showTargets } = this.state
 
         if (showTargets) {

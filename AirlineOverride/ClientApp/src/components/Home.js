@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import './Home.css';
 
 export class Home extends Component {

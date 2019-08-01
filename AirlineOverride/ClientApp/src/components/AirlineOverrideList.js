@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import { AirlineOverride } from './AirlineOverride';
 import { AddAirlineOverride } from './AddAirlineOverride';
 import { UpdateAirlineOverride } from './UpdateAirlineOverride';
@@ -57,7 +55,6 @@ export class AirlineOverrideList extends Component {
     }
 
     handleUpdateTarget(overrideid, targetid) {
-        //console.log("update id: " + id)
         this.setState({
             showUpdateTargetModal: true,
             updateAirlineId: overrideid,
@@ -96,7 +93,6 @@ export class AirlineOverrideList extends Component {
         this.setState({
             showAddTargetModal: false
         })
-        //this.componentWillMount()
     }
 
     cancelUpdateTargetModal() {
@@ -109,7 +105,6 @@ export class AirlineOverrideList extends Component {
         this.setState({
             showUpdateTargetModal: false
         })
-        //this.componentWillMount()
     }
 
     cancelUpdateModal() {
@@ -138,7 +133,6 @@ export class AirlineOverrideList extends Component {
                 if (responseJson != null) {
                     this.setState({ data: responseJson })
                 } else {
-                    //this.setState({ errors: "Credentials seem to be wrong. Please try again or first register with us" })
                 }
             })
     }
@@ -181,13 +175,8 @@ export class AirlineOverrideList extends Component {
                     {
                         
                         data.map(row =>
-                            //<Blog key={blg.id} blogSummary={blg} />)
-                            //<tbody>
                             <AirlineOverride key={row.airlineOverrideId} info={row} handleUpdate={this.handleUpdate} handleTarget={this.handleTarget}
                                 handleAddTarget={this.handleAddTarget} handleUpdateTarget={this.handleUpdateTarget} />
-                                
-                            //    <AirlineOverrideTargetList airlineOverrideID={row.airlineOverrideId} showTargets={showTargets} />
-                            //</tbody>
                         )
                     }
                 </table>

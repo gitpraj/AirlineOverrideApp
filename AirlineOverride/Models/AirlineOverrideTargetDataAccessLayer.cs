@@ -16,7 +16,7 @@ namespace AirlineOverrideApp.Models
             }
             catch
             {
-                throw;
+                return null;
             }
         }
         //To Add new AirlineOverrideTarget record     
@@ -28,8 +28,15 @@ namespace AirlineOverrideApp.Models
                 if (db.AirlineOverrideTarget.Any())
                 {
                     var airlineOverrideTargetList = db.AirlineOverrideTarget.Where(o => o.AirlineOverrideId == airlineOverrideTarget.AirlineOverrideId).ToList();
-                    int seq = airlineOverrideTargetList.Max(o => o.Sequence);
-                    maxSequence = seq + 1;
+                    if (airlineOverrideTargetList.Any())
+                    {
+                        int seq = airlineOverrideTargetList.Max(o => o.Sequence);
+                        maxSequence = seq + 1;
+
+                    } else
+                    {
+                        maxSequence = 1;
+                    }
                 }
                 else
                 {
@@ -44,7 +51,7 @@ namespace AirlineOverrideApp.Models
             }
             catch
             {
-                throw;
+                return -1;
             }
         }
         //To Update the records of a particluar AirlineOverrideTarget    
@@ -58,7 +65,7 @@ namespace AirlineOverrideApp.Models
             }
             catch
             {
-                throw;
+                return -1;
             }
         }
         //Get the details of a particular AirlineOverrideTarget    
@@ -72,22 +79,27 @@ namespace AirlineOverrideApp.Models
             }
             catch
             {
-                throw;
+                return null;
             }
         }
         //To Delete the record of a particular AirlineOverrideTarget    
-        public int DeleteAirlineOverrideTarget(int id)
+        public int DeleteAirlineOverrideTarget(string id)
         {
             try
             {
-                AirlineOverrideTarget emp = db.AirlineOverrideTarget.Find(id);
-                db.AirlineOverrideTarget.Remove(emp);
-                db.SaveChanges();
+                Guid guid = new Guid(id);
+                AirlineOverrideTarget airlineOverrideTarget = db.AirlineOverrideTarget.Find(guid);
+
+                if (airlineOverrideTarget != null)
+                {
+                    db.AirlineOverrideTarget.Remove(airlineOverrideTarget);
+                    db.SaveChanges();
+                }
                 return 1;
             }
             catch
             {
-                throw;
+                return -1;
             }
         }
 
@@ -101,7 +113,7 @@ namespace AirlineOverrideApp.Models
             }
             catch
             {
-                throw;
+                return null;
             }
         }
     }

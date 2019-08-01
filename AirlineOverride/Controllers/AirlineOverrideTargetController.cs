@@ -48,7 +48,7 @@ namespace AirlineOverrideApp.Controllers
         }
         [HttpDelete]
         [Route("api/AirlineOverrideTarget/Delete/{id}")]
-        public int Delete(int id)
+        public int Delete(string id)
         {
             return objAirlineOverrideTarget.DeleteAirlineOverrideTarget(id);
         }

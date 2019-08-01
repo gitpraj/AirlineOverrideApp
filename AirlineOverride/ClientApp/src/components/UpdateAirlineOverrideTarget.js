@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import './AirlineOverrideList.css';
 
 export class UpdateAirlineOverrideTarget extends Component {
@@ -20,6 +18,7 @@ export class UpdateAirlineOverrideTarget extends Component {
         }
         this.closeModal = this.closeModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.successcloseModal = this.successcloseModal.bind(this);
     }
@@ -34,26 +33,12 @@ export class UpdateAirlineOverrideTarget extends Component {
 
     handleViewRidersSubmit(e) {
         e.preventDefault();
-        //tdis.props.history.push("/riders");
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
-        //if (this.state.groupable == '') {
-        //    this.setState({
-        //        groupable: false
-        //    })
-        //}
-        //if (this.state.selfticketing == '') {
-        //    this.setState({
-        //        selfticketing: false
-        //    })
-        //}
-        console.log("code: " + JSON.stringify(this.state))
-
-
-        var formData = new FormData(e.target);
+        var formData = new FormData();
         formData.append('AirlineOverrideTargetId', this.props.targetid);
         formData.append('AirlineOverrideId', this.state.overrideid);
         formData.append('HardMaxROI', this.state.hardmaxroi);
@@ -70,16 +55,34 @@ export class UpdateAirlineOverrideTarget extends Component {
             .then((responseJson) => {
                 console.log("success: " + responseJson)
                 if (responseJson != -1) {
-                    //this.setState({
-                    //    message: "Rider added Successfully",
-                    //    firstname: "",
-                    //    lastname: "",
-                    //    phonenum: "",
-                    //    email: "",
-                    //})
                     this.successcloseModal();
                 } else {
-                    //.setState({ message: "Rider Email to be unique" })
+                    this.closeModal();
+                }
+            })
+    }
+
+    handleSubmitDelete(e) {
+        e.preventDefault();
+
+        //var formData = new FormData();
+        //formData.append('AirlineOverrideTargetId', this.props.targetid);
+        //formData.append('AirlineOverrideId', this.state.overrideid);
+        //formData.append('HardMaxROI', this.state.hardmaxroi);
+        //formData.append('MaxROI', this.state.maxroi);
+        //formData.append('ROI', this.state.roi);
+        //formData.append('Max', this.state.max);
+        //formData.append('Percent', this.state.percent);
+        //formData.append('Sequence', this.state.sequence);
+
+        fetch('api/AirlineOverrideTarget/Delete/' + this.props.targetid, {
+            method: 'DELETE'
+        }).then((response) => response.json())
+            .then((responseJson) => {
+                console.log("success: " + responseJson)
+                if (responseJson != -1) {
+                    this.successcloseModal();
+                } else {
                     this.closeModal();
                 }
             })
@@ -97,15 +100,6 @@ export class UpdateAirlineOverrideTarget extends Component {
                 console.log("success: " + JSON.stringify(responseJson))
                 if (responseJson != null) {
 
-                    //const code = responseJson.code;
-                    //const startdate = responseJson.startDate;
-                    //const enddate = responseJson.endDate;
-                    //const groupable = responseJson.groupable;
-                    //const minrevenue = responseJson.minRevenue;
-                    //const guaranteedroi = responseJson.guaranteedRoi;
-                    //const payingfrom = responseJson.payingFrom
-                    //const selfticketing = responseJson.selfTicketing;
-
                     this.setState({
                         hardmaxroi: responseJson.hardMaxRoi,
                         maxroi: responseJson.maxRoi,
@@ -116,7 +110,6 @@ export class UpdateAirlineOverrideTarget extends Component {
                         overrideid: responseJson.airlineOverrideId,
                     })
                 } else {
-                    //this.setState({ errors: "Credentials seem to be wrong. Please try again or first register with us" })
                 }
             })
     }
@@ -144,7 +137,7 @@ export class UpdateAirlineOverrideTarget extends Component {
                         <img src="" style={{ width: "30%" }} className="w3-circle w3-margin-top"></img>
                     </div>
 
-                    <form className="w3-container" onSubmit={this.handleSubmit}>
+                    <form className="w3-container">
                         <div className="w3-section">
                             <label><b>Hard Max ROI</b></label>
                             <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Hard Max ROI" onChange={e => this.setState({ hardmaxroi: e.target.value })}
@@ -166,7 +159,9 @@ export class UpdateAirlineOverrideTarget extends Component {
                             <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Perrcent" onChange={e => this.setState({ percent: e.target.value })}
                                 value={this.state.percent} required></input>
 
-                            <button className="w3-button w3-block w3-green w3-section w3-padding" type="submit">Update Airline Override Target</button>
+                            <button className="w3-button w3-block w3-green w3-section w3-padding" type="submit" onClick={this.handleSubmit}>Update Airline Override Target</button>
+
+                            <button className="w3-button w3-block w3-red w3-section w3-padding" type="submit" onClick={this.handleSubmitDelete}>Delete Airline Override Target</button>
 
                         </div>
                     </form>

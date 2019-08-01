@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import Background from '../images/moped.jpg';
-//import Background from 'https://lh3.googleusercontent.com/MOf9Kxxkj7GvyZlTZOnUzuYv0JAweEhlxJX6gslQvbvlhLK5_bSTK6duxY2xfbBsj43H=w300'
 import './AirlineOverrideList.css';
 
 export class AirlineOverrideTarget extends Component {
@@ -23,7 +21,6 @@ export class AirlineOverrideTarget extends Component {
     handleOverrideTarget(e) {
         e.preventDefault();
         this.props.handleTarget();
-        //tdis.props.history.push("/riders");
     }
 
     render() {
