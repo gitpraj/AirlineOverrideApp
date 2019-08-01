@@ -5,7 +5,7 @@ import { UpdateAirlineOverride } from './UpdateAirlineOverride';
 import { AddAirlineOverrideTarget } from './AddAirlineOverrideTarget';
 import { UpdateAirlineOverrideTarget } from './UpdateAirlineOverrideTarget';
 import { ClockTime } from './ClockTime';
-import './AirlineOverrideList.css';
+import '../Style/AirlineOverrideList.css';
 
 export class AirlineOverrideList extends Component {
     displayName = AirlineOverrideList.name

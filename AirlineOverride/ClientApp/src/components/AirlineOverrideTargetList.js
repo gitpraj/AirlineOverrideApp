@@ -3,8 +3,8 @@ import { AirlineOverride } from './AirlineOverride';
 import { AddAirlineOverride } from './AddAirlineOverride';
 import { UpdateAirlineOverride } from './UpdateAirlineOverride';
 import { AirlineOverrideTarget } from './AirlineOverrideTarget';
-import './AirlineOverrideList.css';
-import './AirlineOverrideTargetList.css';
+import '../Style/AirlineOverrideList.css';
+import '../Style/AirlineOverrideTargetList.css';
 
 export class AirlineOverrideTargetList extends Component {
     displayName = AirlineOverrideTargetList.name

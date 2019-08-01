@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import './AirlineOverrideList.css';
+import '../Style/AirlineOverrideList.css';
 import { AirlineOverrideTargetList } from './AirlineOverrideTargetList';
 import { AddAirlineOverride } from './AddAirlineOverride';
 

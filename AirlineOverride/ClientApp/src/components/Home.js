@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import './Home.css';
+import '../Style/Home.css';
 
 export class Home extends Component {
     displayName = Home.name

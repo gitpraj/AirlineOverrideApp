@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import './AirlineOverrideList.css';
+import '../Style/AirlineOverrideList.css';
 
 export class UpdateAirlineOverride extends Component {
     displayName = UpdateAirlineOverride.name
