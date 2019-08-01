@@ -65,16 +65,6 @@ export class UpdateAirlineOverrideTarget extends Component {
     handleSubmitDelete(e) {
         e.preventDefault();
 
-        //var formData = new FormData();
-        //formData.append('AirlineOverrideTargetId', this.props.targetid);
-        //formData.append('AirlineOverrideId', this.state.overrideid);
-        //formData.append('HardMaxROI', this.state.hardmaxroi);
-        //formData.append('MaxROI', this.state.maxroi);
-        //formData.append('ROI', this.state.roi);
-        //formData.append('Max', this.state.max);
-        //formData.append('Percent', this.state.percent);
-        //formData.append('Sequence', this.state.sequence);
-
         fetch('api/AirlineOverrideTarget/Delete/' + this.props.targetid, {
             method: 'DELETE'
         }).then((response) => response.json())
@@ -140,23 +130,23 @@ export class UpdateAirlineOverrideTarget extends Component {
                     <form className="w3-container">
                         <div className="w3-section">
                             <label><b>Hard Max ROI</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Hard Max ROI" onChange={e => this.setState({ hardmaxroi: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Hard Max ROI" maxlength="7" onChange={e => this.setState({ hardmaxroi: e.target.value })}
                                 value={this.state.hardmaxroi} required></input>
 
                             <label><b>Max ROI</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Max ROI" onChange={e => this.setState({ maxroi: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Max ROI" maxlength="7" onChange={e => this.setState({ maxroi: e.target.value })}
                                 value={this.state.maxroi} required></input>
 
                             <label><b>ROI</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="ROI" onChange={e => this.setState({ roi: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="ROI" maxlength="7" onChange={e => this.setState({ roi: e.target.value })}
                                 value={this.state.roi} required></input>
 
                             <label><b>Max</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Max" onChange={e => this.setState({ max: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Max" maxlength="7" onChange={e => this.setState({ max: e.target.value })}
                                 value={this.state.max} required></input>
 
                             <label><b>Percent</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Perrcent" onChange={e => this.setState({ percent: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Perrcent" maxlength="7" onChange={e => this.setState({ percent: e.target.value })}
                                 value={this.state.percent} required></input>
 
                             <button className="w3-button w3-block w3-green w3-section w3-padding" type="submit" onClick={this.handleSubmit}>Update Airline Override Target</button>

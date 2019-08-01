@@ -68,19 +68,6 @@ export class UpdateAirlineOverride extends Component {
     handleSubmitDelete(e) {
         e.preventDefault();
 
-        //var formData = new FormData(e.target);
-        //formData.append('AirlineOverrideId', this.props.id);
-        //formData.append('Code', this.state.code);
-        //formData.append('StartDate', this.state.startdate);
-        //formData.append('EndDate', this.state.enddate);
-        //console.log(this.state.groupable)
-        //formData.append('GroupableStr', this.state.groupable);
-        //formData.append('MinRevenue', this.state.minrevenue);
-        //formData.append('GuaranteedROI', this.state.guaranteedroi);
-        //formData.append('PayingFrom', this.state.payingfrom);
-        //formData.append('SelfTicketing', this.state.selfticketing);
-        //console.log(JSON.stringify(formData))
-
         fetch('api/AirlineOverride/Delete/'+this.props.id, {
             method: 'DELETE'
         }).then((response) => response.json())
@@ -150,7 +137,7 @@ export class UpdateAirlineOverride extends Component {
                     <form className="w3-container">
                         <div className="w3-section">
                             <label><b>Code</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Code" onChange={e => this.setState({ code: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Code" maxlength="2" onChange={e => this.setState({ code: e.target.value })}
                                 value={this.state.code} required></input>
 
                             <label><b>Start Date</b></label>
@@ -162,15 +149,15 @@ export class UpdateAirlineOverride extends Component {
                                 value={this.state.enddate} required></input>
 
                             <label><b>Min Revenue</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Min Revenue" onChange={e => this.setState({ minrevenue: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Min Revenue" maxlength="15" onChange={e => this.setState({ minrevenue: e.target.value })}
                                 value={this.state.minrevenue} required></input>
 
                             <label><b>Guaranteed ROI</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Guaranteed ROI" onChange={e => this.setState({ guaranteedroi: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Guaranteed ROI" maxlength="15" onChange={e => this.setState({ guaranteedroi: e.target.value })}
                                 value={this.state.guaranteedroi} required></input>
 
                             <label><b>Paying From</b></label>
-                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Paying From" onChange={e => this.setState({ payingfrom: e.target.value })}
+                            <input className="w3-input w3-border w3-margin-bottom" type="text" placeholder="Paying From" maxlength="15" onChange={e => this.setState({ payingfrom: e.target.value })}
                                 value={this.state.payingfrom} required></input>
 
                             {groupable ? <input className="w3-check w3-margin-top" type="checkbox" name="groupable" onClick={this.handleChange} checked />  : 
