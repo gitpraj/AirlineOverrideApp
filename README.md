@@ -1,4 +1,4 @@
-# RiderApp
+# Airline Override App
 
 This App was built for a coding challenge. AirlineOverride System - Airline Override maintenance web app with the
 following characteristics: An Editable Grid for adding, Editing, deleting and viewing Airline overrides
