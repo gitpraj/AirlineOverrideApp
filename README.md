@@ -18,7 +18,7 @@ this application in the RiderApp folder named RiderAppDB_script. 2 tables - Airl
 * You can only add, update, delete airline overrides and their targets. Dummy data has been added via DB
 * The Groupable and Self Ticketing checkbox not updated through frontend. But renders properly according to values in db.
 * Basic clock on the top of the page
-* Not much validation against the fields for both airline overrides and their targets 
+* Basic validation against the fields for both airline overrides and their targets. 
 * Sufficient Unit tests
 * Just 2 SQL tables - AirlineOverride, AirlineOverride
 
@@ -27,7 +27,8 @@ this application in the RiderApp folder named RiderAppDB_script. 2 tables - Airl
 * UI can be improved big time.
 * When airline override targets gets added/updated/deleted, does not get rendered auto, unless we toggle the down arrow. To be rendered automatically
 * The Groupable and Self Ticketing checkbox to updated through frontend
-* The API controllers in the back to be made asynchronous as possible.
+* The functionality in the back to be made asynchronous as possible.
+* Validation checks to be made much better using regex. Date Time checks to be done.
 * Web API documentation using swagger
 * Authentication/Authorization for the the API's
 * Unit test to involve stub/mock interfaces to talk with dummy data instead of actual database.
