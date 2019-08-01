@@ -19,12 +19,13 @@ this application in the RiderApp folder named RiderAppDB_script. 2 tables - Airl
 * The Groupable and Self Ticketing checkbox not updated through frontend. But renders properly according to values in db.
 * Basic clock on the top of the page
 * Basic validation against the fields for both airline overrides and their targets. 
+* Not highly mobile responsive.
 * Sufficient Unit tests
 * Just 2 SQL tables - AirlineOverride, AirlineOverride
 
 ### Improvements
 
-* UI can be improved big time.
+* UI can be improved big time. Completely responsive. 
 * When airline override targets gets added/updated/deleted, the override target table does not get rendered automatically, unless we toggle the down arrow. Working on that.
 * The Groupable and Self Ticketing checkbox to updated through frontend
 * The functionality in the back to be made asynchronous as possible.
