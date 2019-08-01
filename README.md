@@ -25,10 +25,11 @@ this application in the RiderApp folder named RiderAppDB_script. 2 tables - Airl
 ### Improvements
 
 * UI can be improved big time.
-* When airline override targets gets added/updated/deleted, does not get rendered auto, unless we toggle the down arrow. To be rendered automatically
+* When airline override targets gets added/updated/deleted, the override target table does not get rendered automatically, unless we toggle the down arrow. Working on that.
 * The Groupable and Self Ticketing checkbox to updated through frontend
 * The functionality in the back to be made asynchronous as possible.
 * Validation checks to be made much better using regex. Date Time checks to be done.
+* Redux state container - to avoid sharing data among sibling components.
 * Web API documentation using swagger
 * Authentication/Authorization for the the API's
 * Unit test to involve stub/mock interfaces to talk with dummy data instead of actual database.
